@@ -31,8 +31,7 @@ namespace FeedRead
             
             feed = SyndicationFeed.Load(reader);
             reader.Close();
-            //XmlWriter xmlWriter = XmlWriter.Create("TestAtomFile.xml");
-            //feed.SaveAsAtom10(xmlWriter);
+          
 
             listView1.View = View.Details;
             foreach (SyndicationItem item in feed.Items)
@@ -78,19 +77,6 @@ namespace FeedRead
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadList();
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_DoubleClick(object sender, EventArgs e)
-        {
-            Debug.Print(sender.ToString());
-        }
+        
     }
 }

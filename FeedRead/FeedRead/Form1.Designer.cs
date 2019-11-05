@@ -64,8 +64,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(849, 363);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            this.richTextBox1.DoubleClick += new System.EventHandler(this.richTextBox1_DoubleClick);
+           
             // 
             // textBox1
             // 
@@ -82,7 +81,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // Form1
             // 
