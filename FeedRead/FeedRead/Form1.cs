@@ -31,23 +31,28 @@ namespace FeedRead
             
             feed = SyndicationFeed.Load(reader);
             reader.Close();
-          
 
+            var x = "xxx";
             listView1.View = View.Details;
+            listView1.Clear();
             foreach (SyndicationItem item in feed.Items)
             {
                 var subject = item.Title.Text;
-                var lvi = new ListViewItem(subject);
-                listView1.Items.Add(lvi);
+                //var lvi = new ListViewItem(subject) {Text = subject};
+                //Debug.Print( $"text:{lvi.Text} name: {lvi.Name}  ");
+                listView1.Items.Add(x);
             }
-            
+            listView1.Refresh();
             
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            const string urlStart = "https://feeds.simplecast.com/JGE3yC0V";
+            //const string urlStart = "https://feeds.simplecast.com/JGE3yC0V";
+           // const string urlStart ="https://anchor.fm/s/3fab060/podcast/rss";
+            const string urlStart = "https://changelog.com/practicalai/feed";
+        
             textBox1.Text = urlStart;
             LoadList();
             
@@ -77,6 +82,9 @@ namespace FeedRead
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadList();
+        }
     }
 }

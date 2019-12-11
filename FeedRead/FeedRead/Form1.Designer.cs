@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
             this.listView1 = new System.Windows.Forms.ListView();
             this.Column1 = new System.Windows.Forms.ColumnHeader();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -43,10 +43,10 @@
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem4});
             this.listView1.Location = new System.Drawing.Point(4, 7);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(849, 432);
+            this.listView1.Size = new System.Drawing.Size(849, 316);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -59,35 +59,34 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 445);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 329);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(849, 363);
+            this.richTextBox1.Size = new System.Drawing.Size(850, 265);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
-           
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 818);
+            this.textBox1.Location = new System.Drawing.Point(3, 610);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(748, 23);
+            this.textBox1.Size = new System.Drawing.Size(753, 23);
             this.textBox1.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(771, 814);
+            this.button1.Location = new System.Drawing.Point(778, 609);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 26);
+            this.button1.Size = new System.Drawing.Size(74, 22);
             this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 854);
+            this.ClientSize = new System.Drawing.Size(865, 661);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
