@@ -31,19 +31,32 @@ namespace FeedRead
             
             feed = SyndicationFeed.Load(reader);
             reader.Close();
-
-            var x = "xxx";
+ 
             listView1.View = View.Details;
+            listView1.FullRowSelect = true;
             listView1.Clear();
+            listView1.Columns.Add("subject");
+         
+            listView1.Columns.Add("uri");
+
             foreach (SyndicationItem item in feed.Items)
             {
                 var subject = item.Title.Text;
-                //var lvi = new ListViewItem(subject) {Text = subject};
-                //Debug.Print( $"text:{lvi.Text} name: {lvi.Name}  ");
-                listView1.Items.Add(x);
+                foreach (var link in item.Links)
+                {
+                    var uri = link.Uri?.AbsoluteUri;
+                    if (uri.Contains("mp3"))
+                    {
+                        var lvi = new ListViewItem(subject) { Text = subject };
+                        
+                        lvi.SubItems.Add(link.Uri?.AbsoluteUri);
+                        listView1.Items.Add(lvi);
+                    }
+                }
+           
             }
             listView1.Refresh();
-            
+
 
         }
 
@@ -57,30 +70,20 @@ namespace FeedRead
             LoadList();
             
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListView1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            richTextBox1.Text = "";
-            
-            var o = (ListView) sender;
-            if (o.SelectedItems.Count != 1) return;
-            var s = o.SelectedItems[0].Text;
-            var item = feed.Items.FirstOrDefault(x => x.Title.Text == s);
-            if (item?.Summary == null) return;
-
-           
-
-            richTextBox1.Text = item.Summary.Text;
-            if (item.Links.Count == 0)
+         
+             
+            var sb = new StringBuilder();
+            foreach (ListViewItem item in listView1.SelectedItems)
             {
-                textBox1.Text = "";
-                return;
+                sb.AppendLine(item.SubItems[1].ToString());
             }
-
-
-            textBox1.Text = item.Links[^1]?.Uri.AbsoluteUri;
+            richTextBox1.Text = sb.ToString();
+            richTextBox1.Refresh();
 
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
