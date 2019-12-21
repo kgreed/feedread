@@ -20,4 +20,5 @@ namespace FeedRead
             Application.Run(new Form1());
         }
     }
+
 }
